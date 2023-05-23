@@ -1,15 +1,23 @@
 @import "../base/vars";
+.app {
+    margin: 0 auto;
+}
 
 .todo-container {
     background-color: $container-background;
-    min-width: 500px;
+    width: 500px;
     min-height: 400px;
     margin: 0 auto;
-    transform: translateY(50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin-top: 200px;
+    position: relative;
+
+    @media(max-width:450px) {
+        max-width: 350px;
+    }
 }
 
 #add {
@@ -49,4 +57,11 @@
 
 .item {
     display: none;
+}
+
+.delete {
+    background-color: $base-buttonsColor;
+    color: $container-background;
+    border: none;
+    padding: 10px 12px;
 }

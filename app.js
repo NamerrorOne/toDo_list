@@ -6,8 +6,11 @@ const ITEM = document.querySelector(".item");
 const ADD_ITEM = document.getElementById("add-item");
 const ITEM_DESCRIPTION = document.querySelector(".item-description");
 const ITEM_COMPLITED = document.querySelector(".item-complited");
+const DELETE_BUTTON = document.querySelector(".delete");
 
 const tasks = JSON.parse(localStorage.getItem("todo")) || [];
+
+
 
 function getTasks() {
     let task;
@@ -72,3 +75,16 @@ ADD_ITEM.addEventListener("click", e => {
     addTask(description, checked);
     ITEM.style.display = "none";
 })
+
+DELETE_BUTTON.addEventListener("click", e => {
+    const checkboxes = document.querySelectorAll(".item-complited");
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            const taskContainer = checkbox.parentNode;
+            const taskIndex = Array.from(taskContainer.parentNode.children).indexOf(taskContainer);
+            tasks.splice(taskIndex, 1);
+        }
+    });
+    setTasks(tasks);
+    getTasks();
+});

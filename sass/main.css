@@ -3,13 +3,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 body {
   background-color: #2F3EB1;
   font-family: "montserrat";
@@ -19,16 +23,26 @@ section {
   min-height: 100vh;
 }
 
+.app {
+  margin: 0 auto;
+}
+
 .todo-container {
   background-color: #f0f0f0;
-  min-width: 500px;
+  width: 500px;
   min-height: 400px;
   margin: 0 auto;
-  transform: translateY(50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  margin-top: 200px;
+  position: relative;
+}
+@media (max-width: 450px) {
+  .todo-container {
+    max-width: 350px;
+  }
 }
 
 #add {
@@ -68,4 +82,11 @@ section {
 
 .item {
   display: none;
+}
+
+.delete {
+  background-color: #009578;
+  color: #f0f0f0;
+  border: none;
+  padding: 10px 12px;
 }/*# sourceMappingURL=main.css.map */
