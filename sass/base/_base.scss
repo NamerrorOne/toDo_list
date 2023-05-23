@@ -1,0 +1,15 @@
+@import "./vars";
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: $base-background ;
+    font-family: "montserrat";
+}
+
+section {
+    min-height: 100vh;
+}
